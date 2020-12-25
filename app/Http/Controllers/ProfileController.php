@@ -25,7 +25,6 @@ class ProfileController extends Controller
         return view('profile.edit');
     }
     public function postEdit(Request $request){
-            'location'=>'alpha|max:25',
 
             $this->validate($request, [
                 'first_name' => 'alpha|max:22',
