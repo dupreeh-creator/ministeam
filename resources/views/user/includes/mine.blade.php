@@ -38,11 +38,22 @@
                                 <input type="submit" value="delete from friend list" class="btn btn-dark my-2">
                             </form>
                         </button>
-                    @elseif(Auth::user()->id !== $user->id)
-                        <button class="btn btn-rounded btn-info">
-                            <a href="{{route('friend.add',['username'=>$user->username])}}">Add to friend</a>
-                        </button>
+
                     @endif
+
+                        @if(Auth::user()->hasFriendRequest($user))
+                            <p>Waiting {{$user->getFirstNameOrUsername()}} to answer for request.</p>
+                        @elseif(Auth::user()->hasFriendRequestRec($user))
+                            <a href="{{route('friend.accept',['username'=>$user->username])}}" class="btn btn-dark my-2">Accept friend</a>
+                        @elseif(Auth::user()->friendsWith($user))
+                            <form action="{{route('friend.delete',['username'=>$user->username])}}" method="post">
+                                @csrf
+                                <input type="submit" value="delete from friend list" class="btn btn-rounded btn-danger">
+                            </form>
+                        @elseif(Auth::user()->id !== $user->id)
+                            <a href="{{route('friend.add',['username'=>$user->username])}}" class="btn btn-dark mb-2">Add to friend</a>
+                        @endif
+
 
                 </div>
                 <div class="profile-cover__info">

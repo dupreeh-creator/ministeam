@@ -14,27 +14,30 @@
         <th>Delete</th>
 
 
-
+</tr>
     @foreach($games as $game)
-            <tr>
-                <td>{{$game['id']}}</td>
-                <td>{{$game['name']}}</td>
-                <td><img src="{{ Storage::url('games_images/'.$game['image']) }}" alt="{{asset ('storage')}}/games_images/{{$game['image']}}" width="100" height="100" style="max-height: 220px"> </td>
-                <td>${{$game['price']}}</td>
-                <td>{{$game['category']}}</td>
-                <td>{{$game['rates']}}</td>
-                <td>{{$game['year_id']}}</td>
-               <td><a href="{{route('AdminEditGames',['id'=>$game['id'] ] )}}" class="btn btn-primary"> Edit</a> </td>
-                 <td><a href="{{route('AdminEditImageForm',['id'=>$game['id'] ] )}}" class="btn btn-primary"> Edit image </a> </td>
-                <td><a href="{{route('AdminDeleteGame',['id'=>$game['id'] ] )}}" class="btn btn-warning"> Delete</a> </td>
+        <tr>
+            <td>{{$game['id']}}</td>
+            <td>{{$game['name']}}</td>
+            <td><img src="{{ Storage::url('games_images/'.$game['image']) }}"
+                     alt="{{asset ('storage')}}/games_images/{{$game['image']}}" width="100" height="100"
+                     style="max-height: 220px"></td>
+            <td>${{$game['price']}}</td>
+            <td>{{$game['category']}}</td>
+            <td>{{$game['rates']}}</td>
+            <td>{{$game['year_id']}}</td>
+            <td><a href="{{route('AdminEditGames',['id'=>$game['id'] ] )}}" class="btn btn-primary"> Edit</a></td>
+            <td><a href="{{route('AdminEditImageForm',['id'=>$game['id'] ] )}}" class="btn btn-primary"> Edit image </a>
+            </td>
+            <td><a href="{{route('AdminDeleteGame',['id'=>$game['id'] ] )}}" class="btn btn-warning"> Delete</a></td>
 
-            </tr>
+        </tr>
 
-        @endforeach
-    @if($games->count>10)
+    @endforeach
     <div>
-    <button  class="btn btn-default">{{$games->links()}}</button>
+        <button  class="btn btn-default">{{$games->links()}}</button>
         <br>
     </div>
-    @endif
+
+
 @endsection

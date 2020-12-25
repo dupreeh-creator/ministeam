@@ -13,7 +13,11 @@ class SearchController extends Controller
         $games=Game::where('name',"LIKE",$searchText."%")->paginate(3);
         return view('games.allgames',compact('games'));
     }
-
+//    public function searchNews(Request $request){
+//        $searchText=$request->get('searchText');
+//        $announcements=Announcement::where('title',"LIKE",$searchText."%")->paginate(3);
+//        return view('news.index',compact('announcements'));
+//    }
 
     public function getResults(Request $request){
         $query= $request->input(

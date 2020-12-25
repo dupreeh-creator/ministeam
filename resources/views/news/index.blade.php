@@ -10,7 +10,14 @@
     <link rel="stylesheet" href="{{asset('/news/flexslider.css')}}" type="text/css"/>
     <link href="{{asset('/news/css/owl.carousel.css')}}" rel="stylesheet">
     <link rel="canonical" href="{{asset('https://getbootstrap.com/docs/5.0/examples/album/')}}">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/blog/">
 
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="blog.css" rel="stylesheet">
     <script src="{{asset('/news/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('/news/base.js')}}"></script>
     <div class="header-bottom"><!--header-bottom-->
@@ -138,29 +145,79 @@
         </div>
 
     </div>
-
+<br>
     <div class="container main" style="margin-bottom: 25px;">
-        <div class="row">
+        <div class="row mb-1">
+            <div class="col-md-8">
+                <div class="card flex-md-row mb-4 box-shadow h-md-750">
+                    <div class="card-body d-flex flex-column align-items-start">
 
-            @foreach($announcements as $a)
-                <div class="col-sm-6">
-                    <div class="card-body">
-                        <p class="card-text">
-                        <h2>{{$a->title}}</h2></p>
-                        <img src="<?php echo Storage::url('game_news_images/' . $a['image']);?>" alt="img" width="500"
-                             height="220" style="max-height: 250px">
-                        <p align="justify">{{$a->description}} </p><a class="pull-right btn btn-warning"
-                                                                      href="{{route('getNews',[$a->id])}}">Read
-                            more...</a>
+                        @foreach($announcements as $a)
+                            <div class="jumbotron">
+                        <h3 class="mb-0">
+                            <a class="text-danger" href="{{route('getNews',[$a->id])}}><strong class="d-inline-block mb-2 text-dark">{{$a->title}}</strong></a>
+                        </h3>
+                            <img class="card-img-right flex-auto d-none d-md-block ml-1" src="<?php echo Storage::url('game_news_images/' . $a['image']);?>" alt="Card image cap" width="550"
+                                 height="220" style="max-height: 250px">
+                       <br>
+                            <br>
+                            <p align="justify">{{$a->description}} </p><a class="pull-right btn btn-warning"
+                                                                          href="{{route('getNews',[$a->id])}}">Read
+                                more...</a>
+                            </div>
+                            <br>
+                            <br>
+
+                        @endforeach
+
                     </div>
+
+                </div>
+            </div>
+            <br>
+            &nbsp;&nbsp;&nbsp;
+
+            <aside class="col-md-4 blog-sidebar">
+                <div class="p-3 mb-3 bg-light rounded">
+                    <h4 class="font-italic">About</h4>
+                    <p class="mb-0">This is about nothing. But nothing it is everything.</p>
+                </div>
+                <br>
+                <br>
+
+                <div class="p-3">
+                    <h4 class="font-italic">Archives</h4>
+                    <ol class="list-unstyled mb-0">
+                        <li><a href="#">March 2014</a></li>
+                        <li><a href="#">February 2014</a></li>
+                        <li><a href="#">January 2014</a></li>
+                        <li><a href="#">December 2013</a></li>
+                        <li><a href="#">November 2013</a></li>
+                        <li><a href="#">October 2013</a></li>
+                        <li><a href="#">September 2013</a></li>
+                        <li><a href="#">August 2013</a></li>
+                        <li><a href="#">July 2013</a></li>
+                        <li><a href="#">June 2013</a></li>
+                        <li><a href="#">May 2013</a></li>
+                        <li><a href="#">April 2013</a></li>
+                    </ol>
                 </div>
 
+                <div class="p-3">
+                    <h4 class="font-italic">Elsewhere</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ol>
+                </div>
+            </aside><!-- /.blog-sidebar -->
 
-        @endforeach
         </div>
-
     </div>
 
+
+    </div>
 
 
 

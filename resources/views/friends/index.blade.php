@@ -9,7 +9,7 @@
                 <p>U don`t have any friends. (ಥ﹏ಥ)</p>
             @else
                 @foreach($friends as $user)
-                    @include('user.includes.userblock')
+                    @include('user.includes.mine')
                 @endforeach
             @endif
         </div>

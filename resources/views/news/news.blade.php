@@ -85,7 +85,8 @@
                                 <div class="flex-content">
                                     <h1>The Crew 2</h1>
                                     <hr/>
-                                    <p>Гоночная игра, разработанная компанией Ivory Tower и изданная Ubisoft для Microsoft Windows, PlayStation 4 и Xbox One. ..</p>
+                                    <p>Гоночная игра, разработанная компанией Ivory Tower и изданная Ubisoft для
+                                        Microsoft Windows, PlayStation 4 и Xbox One. ..</p>
                                     <a href="#" class="btn">Read more</a>
                                 </div>
                             </div>
@@ -100,7 +101,8 @@
                                 <div class="flex-content">
                                     <h1>Tekken 7</h1>
                                     <hr/>
-                                    <p>Игра в жанре файтинга, разработанная Bandai Namco Entertainment. Это девятая игра в серии Tekken и первая игра,.</p>
+                                    <p>Игра в жанре файтинга, разработанная Bandai Namco Entertainment. Это девятая игра
+                                        в серии Tekken и первая игра,.</p>
                                     <a href="#" class="btn">Read more</a>
                                 </div>
                             </div>
@@ -115,7 +117,8 @@
                                 <div class="flex-content">
                                     <h1>Crysis 2</h1>
                                     <hr/>
-                                    <p>Crysis 2 — мультиплатформенная компьютерная игра, научно-фантастический шутер от первого лица...</p>
+                                    <p>Crysis 2 — мультиплатформенная компьютерная игра, научно-фантастический шутер от
+                                        первого лица...</p>
                                     <a href="#" class="btn">Read more</a>
                                 </div>
                             </div>
@@ -153,22 +156,31 @@
                 </ul>
             </div>
 
-            <div class="col-md-9 col-md-pull-3">
-                <div class="search-result-item-body">
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <h2>{{$announcement->title}}</h2>
-                            <img src="<?php echo Storage::url('game_news_images/'.$announcement['image']);?>" alt="img"
-                                 width="600"
-                                 height="300" style="max-height: 290px">
-                            <br>
-                            <br><br>
-                            <p align="justify">{{$announcement->full_text}} </p
+                <div class="col-md-9 col-md-pull-3">
+                    <div class="jumbotron">
+                    <div class="search-result-item-body">
+                        <div class="row">
+
+                            <div class="col-sm-9">
+
+                                    <h3>{{$announcement->title}}</h3>
+
+                                    <img src="<?php echo Storage::url('game_news_images/' . $announcement['image']);?>"
+                                         alt="img"
+                                         width="600"
+                                         height="300" style="max-height: 290px">
+                                    <br>
+                                   <br>
+                                    <p align="justify">{{$announcement->full_text}} </p
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
+                </div>
+            <button class = 'btn btn-danger'>
+                <a href="{{route('news')}}" > Back</a>
+            </button>
 
         </div>
     </div>

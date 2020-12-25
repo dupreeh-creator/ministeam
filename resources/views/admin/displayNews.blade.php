@@ -27,8 +27,5 @@
         </tr>
 
     @endforeach
-    <div>
-{{--        <button  class="btn btn-warning">{{$a->links()}}</button>--}}
-        <br>
-    </div>
+
 @endsection

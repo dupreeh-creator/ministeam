@@ -6,7 +6,9 @@
         <div class="col-lg-6">
             <h3>Results of search:"{{Request::input('query') }}"</h3>
             @if(!$users->count())
+                <div class="container">
                 <p>User not find.</p>
+                </div>
             @else
 
                 <div class="row">

@@ -5,6 +5,8 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Status;
+use Illuminate\Validation\ValidationException;
+
 class ProfileController extends Controller
 {
     public function getProfile($username){
@@ -23,17 +25,27 @@ class ProfileController extends Controller
         return view('profile.edit');
     }
     public function postEdit(Request $request){
-        $this->validate($request,[
-            'first_name'=>'alpha|max:25',
-            'last_name'=>'alpha|max:25',
             'location'=>'alpha|max:25',
-        ]);
-        Auth::user()->update([
-            'first_name'=>$request->input('first_name'),
-            'last_name'=>$request->input('last_name'),
-            'location'=>$request->input('location'),
-        ]);
-        return redirect()->route('profile.edit')->with('info','Profile successfully updated.＼(≧▽≦)／');
+
+            $this->validate($request, [
+                'first_name' => 'alpha|max:22',
+                'last_name' => 'alpha|max:22',
+//                'email'=>'unique:users|email|max:255',
+                'location' => 'alpha|max:22',
+                'password' => '',
+            ]);
+            Auth::user()->update([
+                'first_name'=>$request->input('first_name'),
+                'last_name'=>$request->input('last_name'),
+//            'email'=>$request->input('email'),
+                'location'=>$request->input('location'),
+                'password'=>bcrypt($request->input('password')),
+            ]);
+            return redirect()->route('profile.edit')->with('info','Profile successfully updated.＼(≧▽≦)／');
+
+
+
+
     }
     public function userPage(){
         if(Auth::check()){

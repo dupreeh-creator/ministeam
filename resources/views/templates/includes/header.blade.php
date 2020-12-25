@@ -7,17 +7,16 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{csrf_token()}}">
     <title>Home | Mini-Steam</title>
-    <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{asset('/css/prettyPhoto.css')}}" rel="stylesheet">
-    <link href="{{asset('/css/price-range.css')}}" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/prettyPhoto.css')}}" rel="stylesheet">
+    <link href="{{asset('css/price-range.css')}}" rel="stylesheet">
 
-    <link href="{{asset('/css/main.css')}}" rel="stylesheet">
-    <link href="{{asset('/css/responsive.css')}}" rel="stylesheet">
-    <link href="{{asset('/css/profile.css')}}" rel="stylesheet">
+    <link href="{{asset('css/main.css')}}" rel="stylesheet">
+    <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
+    <link href="{{asset('css/profile.css')}}" rel="stylesheet">
 
-    <script src="{{asset('/js/html5shiv.js')}}"></script>
-    <script src="{{asset('/js/respond.min.js')}}"></script>
+
 
 
 </head><!--/head-->
@@ -90,6 +89,16 @@
     @yield('content')
 
 </div>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/jquery.js')}}"></script>
+<script src="{{asset('js/jquery.prettyPhoto.js')}}"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="{{asset('js/jquery.main.js')}}"></script>
+<script src="{{asset('js/html5shiv.js')}}"></script>
+<script src="{{asset('js/app.js')}}"></script>
+
+<script src="{{asset('js/respond.min.js')}}"></script>
+
 </body>
 
 
